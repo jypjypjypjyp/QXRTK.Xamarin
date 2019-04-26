@@ -1,0 +1,33 @@
+﻿<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+  <add-node path="/api/package[@name='com.pop.android.net']/class[@name='AbstractFeedbackCallback']">
+    <method abstract="false" deprecated="not deprecated" final="false" name="feedbackBody" native="false" return="void" static="false" synchronized="false" visibility="public">
+      <parameter name="p0" type="java.lang.Object"></parameter>
+    </method>
+  </add-node>
+
+  <attr path="/api/package[@name='com.pop.android.net.security']/class[@name='MapEntryComparator']/method[@name='compare']/parameter[@type='java.util.Map.Entry&lt;K, V&gt;']" name="type">java.lang.Object</attr>
+
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONArray']/method/parameter[@type='java.util.Collection&lt;?&gt;']" name="type">java.util.Collection</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONArray']/method/parameter[@type='java.util.Collection&lt;? extends java.lang.Object&gt;']" name="type">java.util.Collection</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONArray']/method[@name='subList']" name="return">java.util.List</attr>
+
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONObject']/method[@name='entrySet']" name="return">java.util.Collection</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONObject']/method[@name='keySet']" name="return">java.util.Collection</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONObject']/method[@name='put']/parameter[@type='java.lang.String']" name="type">java.lang.Object</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONObject']/method[@name='putAll']/parameter[@type='java.util.Map&lt;? extends java.lang.String, ? extends java.lang.Object&gt;']" name="type">java.util.Map</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONObject']/method[@name='values']" name="return">java.util.Collection</attr>
+
+  <attr path="/api/package[@name='com.qx.wz.pop.local']/class[@name='AlgServerConfigService']/method[@return='com.qx.wz.pop.rpc.dto.AlgServerConfig']" name="return">com.qx.wz.pop.rpc.dto.BaseServerConfig</attr>
+
+  <attr path="/api/package[@name='com.qx.wz.pop.local']/class[@name='ServerConfigService']/method[@return='com.qx.wz.pop.rpc.dto.ServerConfig']" name="return">com.qx.wz.pop.rpc.dto.BaseServerConfig</attr>
+
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.util']/class[@name='FieldInfo']/method[@name='compareTo']/parameter[@type='com.qx.wz.external.fastjson.util.FieldInfo']" name="type">java.lang.Object</attr>
+  
+</metadata>
