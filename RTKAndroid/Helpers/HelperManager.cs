@@ -2,7 +2,7 @@
 
 namespace RTKAndroid.Helpers
 {
-    public class HelperManger
+    public class HelperManager
     {
         public static Activity MainActivity
         {

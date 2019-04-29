@@ -18,6 +18,7 @@ namespace RTKAndroid.Helpers
         public LocationState State { get; set; }
 
         private LocationManager locationManager;
+        private GpsStatus.INmeaListener nmeaListener;
         private Criteria criteria;
         private Action<Location> action;
 
@@ -61,6 +62,7 @@ namespace RTKAndroid.Helpers
                 case LocationState.Disabled:
                     return false;
                 case LocationState.Available:
+                    this.nmeaListener = nmeaListener;
                     locationManager.AddNmeaListener(nmeaListener);
                     State = LocationState.On;
                     return true;
@@ -75,7 +77,13 @@ namespace RTKAndroid.Helpers
         {
             if (State == LocationState.On)
             {
-                locationManager.RemoveUpdates(this);
+                if(nmeaListener==null) 
+                    locationManager.RemoveUpdates(this);
+                else
+                {
+                    locationManager.RemoveNmeaListener(nmeaListener);
+                    nmeaListener = null;
+                }
                 State = LocationState.Available;
             }
         }

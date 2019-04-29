@@ -12,28 +12,29 @@ namespace RTKAndroid.Helpers
     {
         private IWzRtcmManager _RtcmManager;
         private bool isStart;
-        private Action<RtcmSnippet> action;
-        private readonly Activity owner;
+        private Action<RtcmSnippet> dataChanged;
+        private Action<int, string> statusChanged;
+        private readonly MainActivity owner;
 
-        private readonly string APP_KEY = "710700";
-        private readonly string APP_SECRET = "90539a3850bb8fbd6d7c9342afdba9232ea3f75bfad4b8071642c8948dbf5a03";
+        private readonly string APP_KEY = "xxxxxxx";
+        private readonly string APP_SECRET = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
         private readonly string DEVICE_TYPE = "RTK";
         private readonly string DEVICE_ID;
-        private readonly string GGA = "$GPGGA,074459.91,2305.5104600,N,11348.9600000,E,1,00,1.0,4.915,M,-4.915,M,0.0,*5F";
 
         public RTKHelper(Activity owner)
         {
-            this.owner = owner;
-            DEVICE_ID = ((TelephonyManager)owner.GetSystemService(Context.TelephonyService)).DeviceId;
+            this.owner = owner as MainActivity;
+            DEVICE_ID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
             isStart = false;
             _RtcmManager = WzRtcmFactory.GetWzRtcmManager(owner, APP_KEY, APP_SECRET, DEVICE_ID, DEVICE_TYPE, null);
         }
 
-        public void Start(Action<RtcmSnippet> action)
+        public void Start(Action<RtcmSnippet> dataAction, Action<int,string> statusAction = null)
         {
             if (isStart) return;
             isStart = true;
-            this.action = action;
+            this.dataChanged = dataAction;
+            this.statusChanged = statusAction;
             _RtcmManager.RequestRtcmUpdate(this, 31.2065750000, 121.4684340000, null);
             HelperManger.LocationHelper.Start(this);
         }
@@ -48,12 +49,12 @@ namespace RTKAndroid.Helpers
 
         public void OnRtcmDatachanged(RtcmSnippet p0)
         {
-            action(p0);
+            dataChanged(p0);
         }
 
         public void OnStatusChanaged(int p0, string p1)
         {
-
+            statusChanged?.Invoke(p0, p1);
         }
 
         public new void Dispose()
@@ -68,6 +69,7 @@ namespace RTKAndroid.Helpers
 
         public void OnNmeaReceived(long timestamp, string nmea)
         {
+            owner.DisplayNmea(nmea);
             if (nmea.Substring(1, 5) == "GPGGA")
             {
                 _RtcmManager.SendGGA(nmea);
