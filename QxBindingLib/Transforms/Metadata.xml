@@ -29,5 +29,30 @@
   <attr path="/api/package[@name='com.qx.wz.pop.local']/class[@name='ServerConfigService']/method[@return='com.qx.wz.pop.rpc.dto.ServerConfig']" name="return">com.qx.wz.pop.rpc.dto.BaseServerConfig</attr>
 
   <attr path="/api/package[@name='com.qx.wz.external.fastjson.util']/class[@name='FieldInfo']/method[@name='compareTo']/parameter[@type='com.qx.wz.external.fastjson.util.FieldInfo']" name="type">java.lang.Object</attr>
-  
+
+  <attr path="/api/package[@name='com.pop.android.net']/class[@name='POPMessage']/method[@name='policy']" name="managedName">policyM</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='ParserConfig']/method[@name='getSymbolTable' and count(parameter)=0]" name="managedName">getSymbolTableM</attr>
+  <attr path="/api/package[@name='com.pop.android.common.util.nmea.sentence']/interface[@name='Sentence']/method[@name='getBeginChar' and count(parameter)=0]" name="managedName">getBeginCharP</attr>
+  <attr path="/api/package[@name='com.pop.android.common.util.nmea.parser']/class[@name='SentenceParser']/method[@name='getBeginChar' and count(parameter)=0]" name="managedName">getBeginCharP</attr>
+  <attr path="/api/package[@name='com.pop.android.net']/class[@name='WzSdkSwitcher']/method[@name='isLogSave' and count(parameter)=0]" name="managedName">isLogSaveP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONArray']/method[@name='getComponentType' and count(parameter)=0]" name="managedName">getComponentTypeP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson']/class[@name='JSONArray']/method[@name='getRelatedArray' and count(parameter)=0]" name="managedName">getRelatedArrayP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='DefaultJSONParser']/method[@name='getConfig' and count(parameter)=0]" name="managedName">getConfigP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='DefaultJSONParser']/method[@name='config' and count(parameter)=2 and parameter[1][@type='com.qx.wz.external.fastjson.parser.Feature'] and parameter[2][@type='boolean']]" name="managedName">configM</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='DefaultJSONParser']/method[@name='getContext' and count(parameter)=0]" name="managedName">getContextP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='DefaultJSONParser']/method[@name='getInput' and count(parameter)=0]" name="managedName">getInputP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='DefaultJSONParser']/method[@name='getLexer' and count(parameter)=0]" name="managedName">getLexerP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='DefaultJSONParser']/method[@name='getSymbolTable' and count(parameter)=0]" name="managedName">getSymbolTableP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='JSONLexerBase']/method[@name='getCalendar' and count(parameter)=0]" name="managedName">getCalendarP</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='JSONLexerBase']/method[@name='pos' and count(parameter)=0]" name="managedName">posM</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/class[@name='JSONLexerBase']/method[@name='token' and count(parameter)=0]" name="managedName">tokenM</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/interface[@name='JSONLexer']/method[@name='pos' and count(parameter)=0]" name="managedName">posM</attr>
+  <attr path="/api/package[@name='com.qx.wz.external.fastjson.parser']/interface[@name='JSONLexer']/method[@name='token' and count(parameter)=0]" name="managedName">tokenM</attr>
+
+  <attr path="/api/package[@name='com.qx.wz.pop.rpc.result']/class[@name='Result']" name="managedName">ResultC</attr>
+
+  <attr path="/api/package[@name='com.pop.android.common.eventbus']/class[@name='PopEventBus']" name="extends">java.lang.Object</attr>
+  <attr path="/api/package[@name='com.pop.android.common.util']/class[@name='EvilTransform']/method[@name='transformPopLocation']" name="return">java.lang.Object</attr>
+  <attr path="/api/package[@name='com.pop.android.common.util']/class[@name='EvilTransform']/method[@name='transformPopLocation']/parameter[@type='com.pop.android.common.a.a']" name="type">java.lang.Object</attr>
+  <attr path="/api/package[@name='com.qx.wz.dataservice.dataManager']/class[@name='ChipDiffDataManager']" name="extends">java.lang.Object</attr>
 </metadata>
